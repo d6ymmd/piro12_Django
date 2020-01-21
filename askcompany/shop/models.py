@@ -1,5 +1,6 @@
 from django.db import models
 from askcompany.utils import uuid_upload_to
+from django.urls import reverse
 
 
 class Item(models.Model):
@@ -14,3 +15,9 @@ class Item(models.Model):
     def __str__(self):
         # return '<{}> {}'.format(self.pk, self.name)
         return f'<{self.pk}> {self.name}'
+
+    def get_absolute_url(self):
+        # return reverse('shop:item_detail', args=[self.pk]))
+        return reverse('shop:item_detail', kwargs={'pk': self.pk})
+
+        #pk? -> urls.py의 urlpatterns에 있는 int:pk에 있는 것과 맞춰줌줌
