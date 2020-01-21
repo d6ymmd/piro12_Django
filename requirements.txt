@@ -1,7 +1,2 @@
-Django==2.2.9
-django-debug-toolbar==2.1
-django-extensions==2.2.6
-Pillow==7.0.0
-pytz==2019.3
-six==1.14.0
-sqlparse==0.3.0
+-r reqs/prod_heroku.txt
+

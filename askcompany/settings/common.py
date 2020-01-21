@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from os.path import abspath, dirname
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -67,7 +68,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'askcompany', 'templates'),
         ],
         'APP_DIRS': True,
-        #False일 경우 app하위의 templates는 사용하지 않는다
+
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
